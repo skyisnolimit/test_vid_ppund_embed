@@ -1,0 +1,34 @@
+<!DOCTYPE HTML><html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script src="jsPopunder.min.js"></script> <!-- YOU SHOULD SPECIFY CORRECT PATH HERE SINCE IT DEPENDS ON YOUR SETUP -->
+    <style type="text/css">
+        .video-wrapper {
+            position: relative;
+        }
+        #curtain {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 99999999;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/_lK4cX5xGiQ" frameborder="0" allowfullscreen></iframe>
+        <div id="curtain"></div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $('#curtain').click(function(){
+                jsPopunder('http://www.google.com'); // you can read more about parameters you can use in documentation
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
